@@ -8,27 +8,60 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.0/css/bootstrap.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+    />
   </head>
   <body>
+    <!-- <div class="container"> -->
     <header class="row">
-      <h1 class="col-sm-9">Student Grade Table</h1>
-      <h2 class="col-sm-3">Average Grade <span class="badge badge-dark"></span></h2>
-
+      <h1 class="col-9">Student Grade Table</h1>
+      <h2 class="col-3">
+        Average Grade <span class="badge badge-dark"></span>
+      </h2>
     </header>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Student Name</th>
-          <th scope="col">Course</th>
-          <th scope="col">Grade</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Test</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <table class="table col-9">
+        <thead>
+          <tr>
+            <th scope="col">Student Name</th>
+            <th scope="col">Course</th>
+            <th scope="col">Grade</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <form action="" method="post" class="col-3">
+        <label for="name"></label>
+        <input
+          class="col-6"
+          type="text"
+          id="name"
+          name="user_name"
+          placeholder="Name"
+        />
+        <label for="course"></label>
+        <input
+          class="col-6"
+          type="text"
+          id="course"
+          name="user_course"
+          placeholder="Course"
+        />
+        <label for="grade"></label>
+        <input
+          class="col-6"
+          type="text"
+          id="grade"
+          name="user_grade"
+          placeholder="Grade"
+        />
+        <button type="submit">Add</button>
+        <button type="reset">Cancel</button>
+      </form>
+    </div>
+    <!-- </div> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="/components/app.js"></script>
     <script src="/components/grade-table.js"></script>
