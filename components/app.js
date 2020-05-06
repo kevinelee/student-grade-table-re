@@ -1,7 +1,8 @@
 class App {
-  constructor(gradeTable) {
+  constructor(gradeTable, pageHeader) {
     // passing in instantiated GradeTable as this.gradetable
     this.gradeTable = gradeTable;
+    this.pageHeader = pageHeader;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
   }
