@@ -21,47 +21,53 @@
         Average Grade <span class="badge badge-dark"></span>
       </h2>
     </header>
+
     <div class="row">
-      <table class="table col-9">
-        <thead>
-          <tr>
-            <th scope="col">Student Name</th>
-            <th scope="col">Course</th>
-            <th scope="col">Grade</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-      <form action="" method="post" class="col-3">
-        <label for="name"></label>
-        <input
-          class="col-6"
-          type="text"
-          id="name"
-          name="user_name"
-          placeholder="Name"
-        />
-        <label for="course"></label>
-        <input
-          class="col-6"
-          type="text"
-          id="course"
-          name="user_course"
-          placeholder="Course"
-        />
-        <label for="grade"></label>
-        <input
-          class="col-6"
-          type="text"
-          id="grade"
-          name="user_grade"
-          placeholder="Grade"
-        />
-        <button type="submit">Add</button>
-        <button type="reset">Cancel</button>
-      </form>
+      <div class="col-9">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Student Name</th>
+              <th scope="col">Course</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <div class="col-3">
+        <form action="" method="post">
+          <label for="name"></label>
+          <input
+            class="col-6"
+            type="text"
+            id="name"
+            name="user_name"
+            placeholder="Name"
+          />
+          <label for="course"></label>
+          <input
+            class="col-6"
+            type="text"
+            id="course"
+            name="user_course"
+            placeholder="Course"
+          />
+          <label for="grade"></label>
+          <input
+            class="col-6"
+            type="text"
+            id="grade"
+            name="user_grade"
+            placeholder="Grade"
+          />
+          <button type="submit">Add</button>
+          <button type="reset">Cancel</button>
+        </form>
+      </div>
     </div>
-    <!-- </div> -->
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <script src="/components/app.js"></script>
     <script src="/components/grade-table.js"></script>
