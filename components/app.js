@@ -1,17 +1,16 @@
 class App {
-  constructor() {
+  constructor(gradeTable) {
+    // passing in instantiated GradeTable as this.gradetable
+    this.gradeTable = gradeTable;
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
-  }
-
-  static test() {
-    console.log("test");
   }
 
   getGrades() {
     $.ajax({
       method: "GET",
-      url: "https://sgt.lfzprototypes.com",
+      headers: { "x-access-token": "JPYalZSD" },
+      url: "https://sgt.lfzprototypes.com/api/grades",
       success: (data) => this.handleGetGradesSuccess(data),
       error: (err) => this.handleGetGradesError(err),
     });
@@ -21,8 +20,8 @@ class App {
     console.error(err);
   }
 
-  handleGetGradesSuccess(grades) {
-    console.log(grades);
+  handleGetGradesSuccess(gradesArray) {
+    this.gradeTable.updateGrades(gradesArray);
   }
 
   start() {

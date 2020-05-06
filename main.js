@@ -1,5 +1,7 @@
-const app = new App()
+const $table = document.querySelector('table');
 
-console.log(app);
+const gradeTable = new GradeTable($table);
+
+const app = new App(gradeTable);
 
 app.start();
