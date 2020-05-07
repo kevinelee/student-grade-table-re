@@ -4,8 +4,13 @@ class App {
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm;
+    this.createGrade = this.createGrade.bind(this);
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
+  }
+
+  createGrade(name, course, grade){
+    console.log(name, course, grade);
   }
 
   getGrades() {
@@ -35,3 +40,5 @@ class App {
     this.getGrades();
   }
 }
+
+// addEventListener("click",()=>console.log(event.target));
