@@ -37,7 +37,7 @@ class App {
   }
 
   handleGetGradesSuccess(gradesArray) {
-    console.log(gradesArray);
+    // console.log(gradesArray);
     this.gradeTable.updateGrades(gradesArray);
     let totalGrade = 0;
     for(let i=0;i<gradesArray.length;i++){

@@ -10,7 +10,6 @@ class GradeForm {
   handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
-    console.log(formData);
     const name = formData.get("name");
     const course = formData.get("course");
     const grade = formData.get("grade");

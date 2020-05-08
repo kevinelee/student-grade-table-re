@@ -15,65 +15,69 @@
   </head>
   <body>
     <!-- <div class="container"> -->
-      <header class="row">
-        <h1 class="col-9">Student Grade Table</h1>
-        <h2 class="col-3">
-          Average Grade <span class="badge badge-dark"></span>
-        </h2>
-      </header>
+    <header class="row">
+      <h1 class="col-9">Student Grade Table</h1>
+      <h2 class="col-3">
+        Average Grade <span class="badge badge-dark"></span>
+      </h2>
+    </header>
 
-      <div class="row">
-        <div class="col-9">
-          <table class="table table-bordered table-striped">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Student Name</th>
-                <th scope="col">Course</th>
-                <th scope="col">Grade</th>
-              </tr>
-            </thead>
-            <tbody></tbody>
-          </table>
-        </div>
-
-        <div class="col-3">
-          <form action="" method="post">
-            <div class="">
-              <label for="name"></label>
-              <i class="fas fa-user"></i>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                placeholder="Name"
-                class=""
-              />
-            </div>
-
-            <div class="">
-              <label for="course"></label>
-              <i class="far fa-list-alt"></i>
-              <input
-                type="text"
-                id="course"
-                name="course"
-                placeholder="Course"
-              />
-            </div>
-
-            <div class="">
-              <label for="grade"></label>
-              <i class="fas fa-graduation-cap"></i>
-              <input type="text" id="grade" name="grade" placeholder="Grade" />
-            </div>
-
-            <div class="">
-              <button type="submit">Add</button>
-              <button type="reset">Cancel</button>
-            </div>
-          </form>
-        </div>
+    <div class="row">
+      <div class="col-9">
+        <table class="table table-bordered table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Student Name</th>
+              <th scope="col">Course</th>
+              <th scope="col">Grade</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
       </div>
+
+      <div class="col-3">
+        <form action="" method="POST">
+
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span
+                class="input-group-text fas fa-user p-2"
+                id="inputGroup-sizing-default"
+              ></span>
+            </div>
+            <input type="text" class="form-control" name="name" placeholder="Name" />
+          </div>
+
+            <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+              <span
+                class="input-group-text far fa-list-alt p-2"
+                id="inputGroup-sizing-default"
+              ></span>
+            </div>
+            <input type="text" class="form-control" name="course" placeholder="Course"/>
+          </div>
+
+            <div class="input-group mb-3">
+
+            <div class="input-group-prepend">
+              <span
+                class="input-group-text fas fa-graduation-cap p-2"
+                id="inputGroup-sizing-default"
+              ></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Grade" name="grade"/>
+          </div>
+
+          <div class="float-right">
+            <button type="submit">Add</button>
+            <button type="reset">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <!-- </div> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
