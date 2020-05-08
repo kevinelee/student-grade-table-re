@@ -1,10 +1,25 @@
 class App {
-  constructor(gradeTable, pageHeader) {
+  constructor(gradeTable, pageHeader, gradeForm) {
     // passing in instantiated GradeTable as this.gradetable
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
+    this.gradeForm = gradeForm;
+    this.createGrade = this.createGrade.bind(this);
     this.handleGetGradesError = this.handleGetGradesError.bind(this);
     this.handleGetGradesSuccess = this.handleGetGradesSuccess.bind(this);
+  }
+
+  createGrade(name, course, grade){
+    console.log(name, course, grade);
+      $.ajax({
+        method: "POST",
+        headers: { "x-access-token": "JPYalZSD" },
+        data: {name, course, grade},
+        url: "https://sgt.lfzprototypes.com/api/grades",
+        success: () => this.getGrades(),
+        error: (err) => this.handleGetGradesError(err),
+      });
+
   }
 
   getGrades() {
@@ -22,15 +37,19 @@ class App {
   }
 
   handleGetGradesSuccess(gradesArray) {
+    // console.log(gradesArray);
     this.gradeTable.updateGrades(gradesArray);
     let totalGrade = 0;
     for(let i=0;i<gradesArray.length;i++){
       totalGrade += gradesArray[i].grade;
     }
-    this.pageHeader.updateAverage(totalGrade/gradesArray.length);
+    this.pageHeader.updateAverage(Number.parseFloat(totalGrade/gradesArray.length).toFixed(2)); //caluclating average
   }
 
   start() {
     this.getGrades();
+    this.gradeForm.onSubmit(this.createGrade) ;
   }
 }
+
+// addEventListener("click",()=>console.log(event.target));
