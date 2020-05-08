@@ -1,9 +1,12 @@
-class PageHeader{
-  constructor(headerElement){
+class PageHeader {
+  constructor(headerElement) {
     this.headerElement = headerElement;
   }
-  updateAverage(newAverage){
-    this.headerElement.querySelector('span').textContent = newAverage;
-
+  updateAverage(newAverage) {
+    if (!newAverage) {
+      this.headerElement.querySelector("span").textContent = 0;
+    } else {
+      this.headerElement.querySelector("span").textContent = newAverage;
+    }
   }
 }
