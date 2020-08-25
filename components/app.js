@@ -1,6 +1,6 @@
 class App {
   constructor(gradeTable, pageHeader, gradeForm) {
-    // passing in instantiated GradeTable as this.gradetable
+    // passing in instantiated GradeTable as this.gradeTable
     this.gradeTable = gradeTable;
     this.pageHeader = pageHeader;
     this.gradeForm = gradeForm;
@@ -10,7 +10,6 @@ class App {
   }
 
   createGrade(name, course, grade){
-    console.log(name, course, grade);
       $.ajax({
         method: "POST",
         headers: { "x-access-token": "JPYalZSD" },
@@ -37,13 +36,12 @@ class App {
   }
 
   handleGetGradesSuccess(gradesArray) {
-    // console.log(gradesArray);
     this.gradeTable.updateGrades(gradesArray);
     let totalGrade = 0;
     for(let i=0;i<gradesArray.length;i++){
       totalGrade += gradesArray[i].grade;
     }
-    this.pageHeader.updateAverage(Number.parseFloat(totalGrade/gradesArray.length).toFixed(2)); //caluclating average
+    this.pageHeader.updateAverage(Number.parseFloat(totalGrade/gradesArray.length).toFixed(2)); //calculating average
   }
 
   start() {
@@ -51,5 +49,3 @@ class App {
     this.gradeForm.onSubmit(this.createGrade) ;
   }
 }
-
-// addEventListener("click",()=>console.log(event.target));
